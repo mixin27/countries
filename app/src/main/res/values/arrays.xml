@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Regional bloc.
+        From: https://restcountries.eu/#api-endpoints-regional-bloc
+    -->
+    <string-array name="arr_regional_bloc">
+        <item>EU</item>             <!-- European Union -->
+        <item>EFTA</item>           <!-- European Free Trade Association -->
+        <item>CARICOM</item>        <!-- Caribbean Community -->
+        <item>PA</item>             <!-- Pacific Alliance -->
+        <item>AU</item>             <!-- African Union -->
+        <item>USAN</item>           <!-- Union of South American Nations -->
+        <item>EEU</item>            <!-- Eurasian Economic Union -->
+        <item>AL</item>             <!-- Arab League -->
+        <item>ASEAN</item>          <!-- Association of Southeast Asian Nations -->
+        <item>CAIS</item>           <!-- Central American Integration System -->
+        <item>CEFTA</item>          <!-- Central European Free Trade Agreement -->
+        <item>NAFTA</item>          <!-- North American Free Trade Agreement -->
+        <item>SAARC</item>          <!-- South Asian Association for Regional Cooperation -->
+    </string-array>
+</resources>
