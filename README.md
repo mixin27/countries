@@ -22,5 +22,6 @@ Country Information.
 - [Timber](https://github.com/JakeWharton/timber)
 
 # License
-```
-```
+[Mozilla Public License] MPL 2.0
+
+[Mozilla Public License]: https://www.mozilla.org/en-US/MPL/2.0/
