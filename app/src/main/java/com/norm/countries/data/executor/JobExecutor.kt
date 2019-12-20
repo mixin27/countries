@@ -6,11 +6,15 @@ import java.util.concurrent.LinkedBlockingQueue
 import java.util.concurrent.ThreadFactory
 import java.util.concurrent.ThreadPoolExecutor
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * Create by Kyaw Zayar Tun on 20/12/2019.
  */
-class JobExecutor internal constructor(): ThreadExecutor{
+@Singleton
+class JobExecutor
+@Inject internal constructor(): ThreadExecutor{
 
     private val threadPoolExecutor: ThreadPoolExecutor
 

@@ -5,11 +5,13 @@ import com.norm.countries.data.mapper.country.CountryEntityMapper
 import com.norm.countries.domain.model.Country
 import com.norm.countries.domain.repository.CountryRepository
 import io.reactivex.Single
+import javax.inject.Inject
 
 /**
  * Create by Kyaw Zayar Tun on 20/12/2019.
  */
-class CountryRepositoryImpl(
+class CountryRepositoryImpl
+@Inject constructor(
     private val countryDataSource: CountryDataSource,
     private val countryEntityMapper: CountryEntityMapper
 ) : CountryRepository {
