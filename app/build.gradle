@@ -25,6 +25,8 @@ android {
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        multiDexEnabled = true
+
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [
@@ -113,6 +115,9 @@ dependencies {
     api 'com.squareup.moshi:moshi-kotlin:1.8.0'
     api 'com.squareup.moshi:moshi:1.8.0'
     kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.8.0'
+
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
