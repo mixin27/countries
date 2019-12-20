@@ -6,11 +6,13 @@ import com.norm.countries.domain.model.Country
 import com.norm.countries.domain.repository.CountryRepository
 import com.norm.countries.domain.usecase.UseCase
 import io.reactivex.Observable
+import javax.inject.Inject
 
 /**
  * Create by Kyaw Zayar Tun on 20/12/2019.
  */
-class GetCountryUseCase constructor(
+class GetCountryUseCase
+@Inject constructor(
     private val countryRepository: CountryRepository,
     threadExecutor: ThreadExecutor,
     postExecutionThread: PostExecutionThread
