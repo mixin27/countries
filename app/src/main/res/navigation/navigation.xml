@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dest_all_countries">
 
+    <fragment
+        android:id="@+id/dest_all_countries"
+        android:name="com.norm.countries.ui.all.AllCountriesFragment"
+        android:label="@string/str_all"
+        tools:layout="@layout/fragment_all_countries" />
+    <fragment
+        android:id="@+id/dest_settings"
+        android:name="com.norm.countries.ui.settings.SettingsFragment"
+        android:label="@string/str_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

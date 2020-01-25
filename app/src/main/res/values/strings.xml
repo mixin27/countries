@@ -2,4 +2,8 @@
     <string name="app_name">Countries</string>
     <string name="str_settings">Settings</string>
     <string name="str_application_logo">Application Logo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="str_all">All</string>
 </resources>
