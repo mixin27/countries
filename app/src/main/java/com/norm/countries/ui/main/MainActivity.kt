@@ -1,8 +1,9 @@
-package com.norm.countries
+package com.norm.countries.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import com.norm.countries.R
 
 class MainActivity : AppCompatActivity() {
 

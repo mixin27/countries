@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="lorem_ipsum_title" translatable="false">Lorem Ipsum</string>
+    <string name="lorem_ipsum_body">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</string>
     <string name="lorem_ipsum_content" translatable="false">
         <![CDATA[
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.

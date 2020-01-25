@@ -66,7 +66,6 @@
 ### OkHttp3
 -dontwarn okhttp3.**
 -dontwarn okio.**
--dontwarn javax.annotation.**
 # A resource is loaded with a relative path so the package of this class must be preserved.
 -keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
 # Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
@@ -78,6 +77,3 @@
 ### Room
 -keep class * extends androidx.room.RoomDatabase
 -dontwarn androidx.room.paging.**
-
-### Project
--keep class com.arif.kotlincoroutinesplusflow.network.response.** { *; }
