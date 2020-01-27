@@ -25,4 +25,4 @@ jobs:
       env:
        GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
        APP_FOLDER: app
-       RELEASE_TITLE: New Debug Build
+       RELEASE_TITLE: Debug build
