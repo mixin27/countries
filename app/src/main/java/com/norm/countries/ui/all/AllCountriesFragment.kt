@@ -6,7 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.norm.countries.R
+import com.norm.countries.databinding.FragmentAllCountriesBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -17,8 +20,21 @@ class AllCountriesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_all_countries, container, false)
+
+        val binding: FragmentAllCountriesBinding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_all_countries,
+            container,
+            false
+        )
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        val application = requireNotNull(this.activity).application
+        val allViewModelFactory = AllViewModelFactory(application)
+        val allViewModel = ViewModelProvider(viewModelStore, allViewModelFactory).get(AllViewModel::class.java)
+        binding.viewModel = allViewModel
+
+        return binding.root
     }
 
 

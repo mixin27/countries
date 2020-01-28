@@ -1,10 +1,19 @@
 package com.norm.countries.network
 
 /**
- * A generic class that holds a value with its loading status.
- * from [https://github.com/android/architecture-components-samples/blob/8874799313/GithubBrowserSample/app/src/main/java/com/android/example/github/vo/Resource.kt]
+ * A generic class that contains data and status about loading this data.
  * @param T
 */
+sealed class Resource<T>(
+    val data: T? = null,
+    val message: String? = null
+) {
+    class Success<T>(data: T) : Resource<T>(data)
+    class Loading<T>(data: T? = null) : Resource<T>(data)
+    class Error<T>(message: String, data: T? = null) : Resource<T>(data, message)
+}
+
+/**
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
     companion object {
         fun <T> success(data: T?): Resource<T> {
@@ -19,4 +28,4 @@ data class Resource<out T>(val status: Status, val data: T?, val message: String
             return Resource(Status.LOADING, data, null)
         }
     }
-}
+} */
