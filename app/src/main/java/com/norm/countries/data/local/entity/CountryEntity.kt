@@ -10,9 +10,10 @@ import com.norm.countries.data.remote.CountryModel
  */
 @Entity(tableName = "countries")
 data class CountryEntity(
-    @PrimaryKey
+    @ColumnInfo(name = "numeric_code")
     val numericCode: String,
 
+    @PrimaryKey
     @ColumnInfo(name = "name")
     val name: String,
 
@@ -38,7 +39,7 @@ data class CountryEntity(
     val demonym: String,
 
     @ColumnInfo(name = "area")
-    val area: Long,
+    val area: Double,
 
     @ColumnInfo(name = "gini")
     val gini: Double,

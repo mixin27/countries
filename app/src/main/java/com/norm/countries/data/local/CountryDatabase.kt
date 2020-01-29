@@ -10,7 +10,7 @@ import com.norm.countries.data.local.entity.CountryEntity
 /**
  * Create by Kyaw Zayar Tun on 25/01/2020.
  */
-@Database(entities = [CountryEntity::class], version = 1, exportSchema = false)
+@Database(entities = [CountryEntity::class], version = 3, exportSchema = false)
 abstract class CountryDatabase : RoomDatabase() {
     abstract val countryDao: CountryDao
 

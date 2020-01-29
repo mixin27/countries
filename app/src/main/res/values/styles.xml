@@ -3,15 +3,15 @@
     <!-- Application theme. -->
     <!-- Use Theme.MaterialComponents.DayNight to enable both light and dark themes -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
-        <item name="colorOnPrimary">@color/colorPrimaryText</item>
-        <item name="colorSecondary">@color/colorSecondary</item>
-        <item name="colorOnSecondary">@color/base_white</item>
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorPrimaryVariant">@color/primaryLightColor</item>
+        <item name="colorOnPrimary">@color/primaryTextColor</item>
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSecondaryVariant">@color/secondaryDarkColor</item>
+        <item name="colorOnSecondary">@color/secondaryTextColor</item>
         <item name="toolbarStyle">@style/MyToolBar</item>
         <item name="materialButtonStyle">@style/MyButton</item>
-        <item name="colorSecondaryVariant">@color/colorPrimaryDark</item>
         <item name="textAppearanceHeadline3">@style/TextAppearance.Headline3</item>
         <item name="textAppearanceHeadline4">@style/TextAppearance.Headline4</item>
         <item name="textAppearanceHeadline5">@style/TextAppearance.Headline5</item>

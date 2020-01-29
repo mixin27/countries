@@ -18,13 +18,13 @@ interface CountryDao {
     @Update
     fun update(country: CountryEntity)
 
-    @Query("SELECT * from countries WHERE numericCode = :numericCode")
+    @Query("SELECT * from countries WHERE name = :numericCode")
     fun get(numericCode: String): CountryEntity?
 
     @Query("DELETE FROM countries")
     fun clear()
 
-    @Query("SELECT * FROM countries ORDER BY numericCode DESC LIMIT 1")
+    @Query("SELECT * FROM countries ORDER BY name DESC LIMIT 1")
     fun getCountry(): CountryEntity?
 
     @Query("SELECT * FROM countries ORDER BY name")

@@ -34,6 +34,10 @@ class AllCountriesFragment : Fragment() {
         val allViewModel = ViewModelProvider(viewModelStore, allViewModelFactory).get(AllViewModel::class.java)
         binding.viewModel = allViewModel
 
+        binding.rvAllCountries.adapter = AllCountriesAdapter(AllCountriesAdapter.OnClickListener {
+
+        })
+
         return binding.root
     }
 

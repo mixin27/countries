@@ -3,6 +3,8 @@
     <string name="str_settings">Settings</string>
     <string name="str_application_logo">Application Logo</string>
 
+    <string name="lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="str_all">All</string>

@@ -24,7 +24,7 @@ data class Country(
     val population: Long? = 0L,
 //    val latlng: ArrayList<Int>,
     val demonym: String? = "",
-    val area: Long? = 0L,
+    val area: Double? = 0.0,
     val gini: Double? = 0.0,
 //    val timezones: ArrayList<String>,
 //    val borders: ArrayList<String>,
@@ -72,20 +72,20 @@ data class RegionalBloc(
 fun List<Country>.asDatabaseModel(): List<CountryEntity> {
     return map {
         CountryEntity(
-            numericCode = it.numericCode!!,
+            numericCode = it.numericCode ?: "",
             name = it.name!!,
-            alpha2Code = it.alpha2Code!!,
-            alpha3Code = it.alpha3Code!!,
-            area = it.area!!,
-            capital = it.capital!!,
-            cioc = it.cioc!!,
-            demonym = it.demonym!!,
-            flag = it.flag!!,
-            gini = it.gini!!,
-            nativeName = it.nativeName!!,
-            population = it.population!!,
-            region = it.region!!,
-            subregion = it.subregion!!
+            alpha2Code = it.alpha2Code ?: "",
+            alpha3Code = it.alpha3Code ?: "",
+            area = it.area ?: 0.0,
+            capital = it.capital ?: "",
+            cioc = it.cioc ?: "",
+            demonym = it.demonym ?: "",
+            flag = it.flag ?: "",
+            gini = it.gini ?: 0.0,
+            nativeName = it.nativeName ?: "",
+            population = it.population ?: 0L,
+            region = it.region ?: "",
+            subregion = it.subregion ?: ""
         )
     }
 }

@@ -17,9 +17,12 @@ data class CountryModel(
     val subregion: String,
     val population: Long,
     val demonym: String,
-    val area: Long,
+    val area: Double,
     val gini: Double,
     val nativeName: String,
     val flag: String?,
     val cioc: String
-): Parcelable
+) : Parcelable {
+    val getPopulation: String
+        get() = population.toString()
+}
