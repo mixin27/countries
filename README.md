@@ -1,5 +1,6 @@
 # Countries
 Offline first country information application.
+![Build Debug Apk](https://github.com/ZattWine/countries/workflows/Build%20Debug%20Apk/badge.svg)
 
 ### Feature
 - All available countries
