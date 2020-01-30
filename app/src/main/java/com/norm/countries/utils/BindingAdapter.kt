@@ -6,14 +6,12 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
+import com.bumptech.glide.request.RequestOptions
 import com.norm.countries.R
 import com.norm.countries.network.Status
 import com.norm.countries.utils.svg.GlideApp
-
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
-import com.bumptech.glide.request.RequestOptions
 import com.norm.countries.utils.svg.SvgSoftwareLayerSetter
 
 
@@ -73,6 +71,8 @@ fun bindSvgImageFromUrl(imageView: ImageView, imgUrl: String?) {
         GlideApp.with(imageView.context)
             .`as`(PictureDrawable::class.java)
             .load(imgUri)
+//            .apply(RequestOptions().override(100, 60))
+            .centerCrop()
             .placeholder(R.drawable.image_loading)
             .error(R.drawable.image_error)
             .transition(withCrossFade())
