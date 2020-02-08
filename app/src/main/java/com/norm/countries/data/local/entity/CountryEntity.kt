@@ -74,3 +74,22 @@ fun List<CountryEntity>.asDomainModel(): List<CountryModel> {
         )
     }
 }
+
+fun CountryEntity.asDomainModel(): CountryModel {
+    return CountryModel(
+        numericCode = this.numericCode,
+        name = this.name,
+        alpha2Code = this.alpha2Code,
+        alpha3Code = this.alpha3Code,
+        area = this.area,
+        capital = this.capital,
+        cioc = this.cioc,
+        demonym = this.demonym,
+        flag = this.flag,
+        gini = this.gini,
+        nativeName = this.nativeName,
+        population = this.population,
+        region = this.region,
+        subregion = this.subregion
+    )
+}

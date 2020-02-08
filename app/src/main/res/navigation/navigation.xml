@@ -9,10 +9,23 @@
         android:id="@+id/dest_all_countries"
         android:name="com.norm.countries.ui.all.AllCountriesFragment"
         android:label="@string/str_all"
-        tools:layout="@layout/fragment_all_countries" />
+        tools:layout="@layout/fragment_all_countries" >
+        <action
+            android:id="@+id/action_dest_all_countries_to_countryDetailsFragment"
+            app:destination="@id/dest_country_details" />
+    </fragment>
     <fragment
         android:id="@+id/dest_settings"
         android:name="com.norm.countries.ui.settings.SettingsFragment"
         android:label="@string/str_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/dest_country_details"
+        android:name="com.norm.countries.ui.detail.CountryDetailsFragment"
+        android:label="@string/str_details"
+        tools:layout="@layout/fragment_country_details">
+        <argument
+            android:name="selectedCountry"
+            app:argType="com.norm.countries.data.remote.CountryModel"/>
+    </fragment>
 </navigation>

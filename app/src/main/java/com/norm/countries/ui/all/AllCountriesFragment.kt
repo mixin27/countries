@@ -7,14 +7,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.norm.countries.R
 import com.norm.countries.databinding.FragmentAllCountriesBinding
+import com.norm.countries.utils.extensions.getViewModelFactory
 
 /**
  * A simple [Fragment] subclass.
  */
 class AllCountriesFragment : Fragment() {
+
+    private val allViewModel by viewModels<AllViewModel> {
+        getViewModelFactory()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,14 +36,17 @@ class AllCountriesFragment : Fragment() {
             false
         )
         binding.lifecycleOwner = viewLifecycleOwner
-
-        val application = requireNotNull(this.activity).application
-        val allViewModelFactory = AllViewModelFactory(application)
-        val allViewModel = ViewModelProvider(viewModelStore, allViewModelFactory).get(AllViewModel::class.java)
         binding.viewModel = allViewModel
 
         binding.rvAllCountries.adapter = AllCountriesAdapter(AllCountriesAdapter.OnClickListener {
+            allViewModel.displayCountryDetails(it)
+        })
 
+        allViewModel.navigateToSelectedItem.observe(viewLifecycleOwner, Observer {
+            if (it != null) {
+                this.findNavController().navigate(AllCountriesFragmentDirections.actionDestAllCountriesToCountryDetailsFragment(it))
+                allViewModel.displayCountryDetailsComplete()
+            }
         })
 
         return binding.root

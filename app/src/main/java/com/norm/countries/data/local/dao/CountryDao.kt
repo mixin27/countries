@@ -18,8 +18,8 @@ interface CountryDao {
     @Update
     fun update(country: CountryEntity)
 
-    @Query("SELECT * from countries WHERE name = :numericCode")
-    fun get(numericCode: String): CountryEntity?
+    @Query("SELECT * from countries WHERE name = :name")
+    fun get(name: String): LiveData<CountryEntity?>
 
     @Query("DELETE FROM countries")
     fun clear()

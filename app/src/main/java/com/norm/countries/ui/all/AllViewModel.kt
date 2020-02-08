@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.norm.countries.data.local.CountryDatabase
+import com.norm.countries.data.remote.CountryModel
 import com.norm.countries.data.repository.CountryRepository
 import com.norm.countries.network.Status
 import com.norm.countries.network.model.Country
@@ -31,8 +32,8 @@ class AllViewModel(
     val status: LiveData<Status>
         get() = _status
 
-    private val _navigateToSelectedItem = MutableLiveData<Country>()
-    val navigateToSelectedItem: LiveData<Country>
+    private val _navigateToSelectedItem = MutableLiveData<CountryModel>()
+    val navigateToSelectedItem: LiveData<CountryModel>
         get() = _navigateToSelectedItem
 
     init {
@@ -53,6 +54,21 @@ class AllViewModel(
                 }
             }
         }
+    }
+
+    /**
+     * When the property is clicked, set the [_navigateToSelectedItem] [MutableLiveData]
+     * @param country The [CountryModel] that was clicked on.
+     */
+    fun displayCountryDetails(country: CountryModel) {
+        _navigateToSelectedItem.value = country
+    }
+
+    /**
+     * After the navigation has taken place, make sure navigateToSelectedItem is set to null
+     */
+    fun displayCountryDetailsComplete() {
+        _navigateToSelectedItem.value = null
     }
 
     override fun onCleared() {

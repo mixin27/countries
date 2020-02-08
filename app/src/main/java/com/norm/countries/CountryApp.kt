@@ -17,13 +17,13 @@ class CountryApp: Application() {
         // Leakcanary
         if (BuildConfig.DEBUG) {
             AppWatcher.config = AppWatcher.config.copy(watchActivities = false)
+
+            // Timber
+            Timber.plant(Timber.DebugTree())
         }
 
         // ThreeTenABP
         AndroidThreeTen.init(this)
-
-        // Timber
-        Timber.plant(Timber.DebugTree())
     }
 
     override fun attachBaseContext(base: Context?) {
