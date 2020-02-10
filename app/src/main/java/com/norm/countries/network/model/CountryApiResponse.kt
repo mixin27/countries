@@ -44,11 +44,31 @@ data class Currency(
     val symbol: String
 )
 
+fun List<Currency>.toDataCurrency(): List<com.norm.countries.data.local.entity.Currency> {
+    return map {
+        com.norm.countries.data.local.entity.Currency(
+            code = it.code,
+            name = it.name,
+            symbol = it.symbol
+        )
+    }
+}
+
 data class Language(
     val iso639_1: String,
     val iso639_2: String,
     val nativeName: String
 )
+
+fun List<Language>.toDataLanguage(): List<com.norm.countries.data.local.entity.Language> {
+    return map {
+        com.norm.countries.data.local.entity.Language(
+            iso639_1 = it.iso639_1,
+            iso639_2 = it.iso639_2,
+            nativeName = it.nativeName
+        )
+    }
+}
 
 data class Translation(
     val de: String,
@@ -62,12 +82,39 @@ data class Translation(
     val fa: String
 )
 
+fun List<Translation>.toDataTranslation(): List<com.norm.countries.data.local.entity.Translation> {
+    return map {
+        com.norm.countries.data.local.entity.Translation(
+            de = it.de,
+            fr = it.fr,
+            ja = it.ja,
+            it = it.it,
+            br = it.br,
+            pt = it.pt,
+            nl = it.nl,
+            hr = it.hr,
+            fa = it.fa
+        )
+    }
+}
+
 data class RegionalBloc(
     val acronym: String,
     val name: String,
     val otherAcronyms: ArrayList<String>,
     val otherNames: ArrayList<String>
 )
+
+fun List<RegionalBloc>.toDataRegionalBloc(): List<com.norm.countries.data.local.entity.RegionalBloc> {
+    return map {
+        com.norm.countries.data.local.entity.RegionalBloc(
+            acronym = it.acronym,
+            name = it.name,
+            otherAcronyms = it.otherAcronyms,
+            otherNames = it.otherNames
+        )
+    }
+}
 
 fun List<Country>.asDatabaseModel(): List<CountryEntity> {
     return map {
@@ -85,7 +132,13 @@ fun List<Country>.asDatabaseModel(): List<CountryEntity> {
             nativeName = it.nativeName ?: "",
             population = it.population ?: 0L,
             region = it.region ?: "",
-            subregion = it.subregion ?: ""
+            subregion = it.subregion ?: "",
+            topLevelDomain = it.topLevelDomain,
+            callingCodes = it.callingCodes,
+            altSpellings = it.altSpellings,
+//            latlng = it.latlng,
+            timezones = it.timezones,
+            borders = it.borders
         )
     }
 }

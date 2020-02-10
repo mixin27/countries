@@ -23,9 +23,9 @@ class CountryRepository(
             it.asDomainModel()
         }
 
-    fun getCountry(name: String): LiveData<CountryModel> = Transformations.map(database.countryDao.get(name)) {
-        it!!.asDomainModel()
-    }
+//    fun getCountry(name: String): LiveData<CountryModel> = Transformations.map(database.countryDao.get(name)) {
+//        it!!.asDomainModel()
+//    }
 
     suspend fun refreshCountries() {
         withContext(Dispatchers.IO) {

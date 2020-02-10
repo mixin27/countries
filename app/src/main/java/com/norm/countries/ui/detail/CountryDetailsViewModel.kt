@@ -17,6 +17,6 @@ class CountryDetailsViewModel(
     val country: LiveData<CountryModel> = _country
 
     fun getCountry(name: String?) {
-        _country.value = countryRepository.getCountry(name!!).value
+//        _country.value = countryRepository.getCountry(name!!).value
     }
 }

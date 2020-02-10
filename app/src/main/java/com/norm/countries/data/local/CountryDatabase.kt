@@ -4,13 +4,19 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.norm.countries.data.local.dao.CountryDao
-import com.norm.countries.data.local.entity.CountryEntity
+import com.norm.countries.data.local.entity.*
 
 /**
  * Create by Kyaw Zayar Tun on 25/01/2020.
  */
-@Database(entities = [CountryEntity::class], version = 3, exportSchema = false)
+@Database(
+    entities = [CountryEntity::class],
+    version = 5,
+    exportSchema = false
+)
+@TypeConverters(value = [CustomTypeConverters::class])
 abstract class CountryDatabase : RoomDatabase() {
     abstract val countryDao: CountryDao
 
